@@ -1,0 +1,719 @@
+﻿/*
+
+Theme Name: AI Tool Theme (China CN)
+
+Theme URI: https://example.com/
+
+Author: Your Name
+
+Author URI: https://example.com/
+
+Description: AiNavBox（AI导航箱）— 面向中国用户的 AI 工具导航站主题，炫酷科技风 UI，完整目录/对比/SEO 能力。
+
+Version: 1.3.0
+
+Requires at least: 6.0
+
+Tested up to: 6.8
+
+Requires PHP: 8.0
+
+License: GPL v2 or later
+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Text Domain: ai-tool-theme
+
+*/
+
+
+
+/* --------------------------------------------------------------------------
+
+   炫酷深色科技风（青紫霓虹 + 玻璃拟态）— Tailwind 类名保持不变，在此重映射
+
+--------------------------------------------------------------------------- */
+
+:root {
+
+	--ai-bg: #070b14;
+
+	--ai-bg-soft: #0c1222;
+
+	--ai-surface: rgba(15, 23, 42, 0.72);
+
+	--ai-surface-muted: rgba(30, 41, 59, 0.55);
+
+	--ai-surface-deep: #111827;
+
+	--ai-text: #f1f5f9;
+
+	--ai-text-soft: #94a3b8;
+
+	--ai-text-muted: #64748b;
+
+	--ai-cyan: #22d3ee;
+
+	--ai-cyan-bright: #06b6d4;
+
+	--ai-purple: #a855f7;
+
+	--ai-magenta: #e879f9;
+
+	--ai-accent: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #e879f9 100%);
+
+	--ai-border: rgba(34, 211, 238, 0.18);
+
+	--ai-glow: 0 0 24px rgba(34, 211, 238, 0.35), 0 0 48px rgba(168, 85, 247, 0.15);
+
+}
+
+
+
+html {
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	background: var(--ai-bg);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body.bg-slate-950 {
+	margin: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+
+
+body {
+
+	font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+
+}
+
+body.bg-slate-950 {
+
+	background:
+
+		radial-gradient(ellipse 120% 80% at 10% -20%, rgba(34, 211, 238, 0.22), transparent 55%),
+
+		radial-gradient(ellipse 90% 60% at 95% 0%, rgba(168, 85, 247, 0.2), transparent 50%),
+
+		radial-gradient(ellipse 70% 50% at 50% 100%, rgba(232, 121, 249, 0.08), transparent 45%),
+
+		var(--ai-bg) !important;
+
+	color: var(--ai-text);
+
+}
+
+
+
+.aitt-theme-dark body,
+
+html.aitt-theme-dark {
+
+	color-scheme: dark;
+
+}
+
+
+
+.bg-slate-950\/70 {
+
+	background: rgba(12, 18, 34, 0.85) !important;
+
+	backdrop-filter: blur(12px);
+
+	box-shadow: 0 1px 0 var(--ai-border), var(--ai-glow);
+
+}
+
+
+
+.bg-slate-950\/60 {
+
+	background-color: rgba(15, 23, 42, 0.75) !important;
+
+}
+
+
+
+.bg-slate-950\/40 {
+
+	background-color: var(--ai-surface) !important;
+
+	border: 1px solid var(--ai-border);
+
+}
+
+
+
+.bg-slate-950\/30 {
+
+	background-color: var(--ai-surface-muted) !important;
+
+}
+
+
+
+.bg-slate-950 {
+
+	background-color: var(--ai-bg-soft) !important;
+
+}
+
+
+
+.bg-slate-900 {
+
+	background-color: #0f172a !important;
+
+}
+
+
+
+.bg-slate-900\/70,
+
+.bg-slate-900\/60,
+
+.bg-slate-900\/40 {
+
+	background-color: rgba(15, 23, 42, 0.88) !important;
+
+}
+
+
+
+.bg-gradient-to-b.from-slate-900\/70.to-slate-950,
+
+.from-slate-900\/70.to-slate-950 {
+
+	background: linear-gradient(165deg, rgba(34, 211, 238, 0.08) 0%, rgba(15, 23, 42, 0.95) 45%, #070b14 100%) !important;
+
+	border: 1px solid var(--ai-border) !important;
+
+	box-shadow: var(--ai-glow);
+
+}
+
+
+
+.bg-white\/5 {
+
+	background: rgba(15, 23, 42, 0.65) !important;
+
+	backdrop-filter: blur(8px);
+
+	border: 1px solid var(--ai-border);
+
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+.bg-white\/10 {
+
+	background: rgba(30, 41, 59, 0.5) !important;
+
+}
+
+
+
+.hover\:bg-white\/10:hover {
+
+	background: rgba(34, 211, 238, 0.12) !important;
+
+	border-color: rgba(34, 211, 238, 0.35) !important;
+
+}
+
+
+
+.border-white\/10,
+
+.border-white\/15 {
+
+	border-color: var(--ai-border) !important;
+
+}
+
+
+
+.ring-white\/15 {
+
+	--tw-ring-color: rgba(168, 85, 247, 0.35) !important;
+
+}
+
+
+
+.divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+
+	border-color: var(--ai-border) !important;
+
+}
+
+
+
+.text-white {
+
+	color: var(--ai-text) !important;
+
+}
+
+
+
+header nav a.hover\:text-white:hover {
+
+	color: var(--ai-cyan) !important;
+
+	text-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+
+}
+
+
+
+.text-slate-100,
+
+.text-slate-200 {
+
+	color: #e2e8f0 !important;
+
+}
+
+
+
+.text-slate-300,
+
+.text-slate-400 {
+
+	color: var(--ai-text-soft) !important;
+
+}
+
+
+
+.text-slate-500 {
+
+	color: var(--ai-text-muted) !important;
+
+}
+
+
+
+.text-emerald-300\/90 {
+
+	color: var(--ai-cyan) !important;
+
+	text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+
+}
+
+
+
+.bg-emerald-400 {
+
+	background: var(--ai-accent) !important;
+
+	color: #0f172a !important;
+
+	box-shadow: 0 4px 20px rgba(34, 211, 238, 0.45);
+
+	font-weight: 800;
+
+}
+
+
+
+.hover\:bg-emerald-300:hover {
+
+	filter: brightness(1.12);
+
+	box-shadow: 0 6px 28px rgba(168, 85, 247, 0.5);
+
+}
+
+
+
+.text-emerald-200,
+
+.text-emerald-300 {
+
+	color: var(--ai-cyan) !important;
+
+}
+
+
+
+.border-emerald-400\/40,
+
+.border-emerald-300\/50 {
+
+	border-color: rgba(34, 211, 238, 0.45) !important;
+
+}
+
+
+
+.bg-emerald-400\/10,
+
+.bg-emerald-400\/15 {
+
+	background: rgba(34, 211, 238, 0.12) !important;
+
+}
+
+
+
+.hover\:border-emerald-300\/50:hover {
+
+	border-color: rgba(168, 85, 247, 0.55) !important;
+
+	box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
+
+}
+
+
+
+.hover\:text-emerald-200:hover {
+
+	color: var(--ai-magenta) !important;
+
+}
+
+
+
+.text-amber-400 {
+
+	color: var(--ai-cyan) !important;
+
+}
+
+
+
+.hover\:text-amber-300:hover {
+
+	color: var(--ai-purple) !important;
+
+}
+
+
+
+.bg-rose-900\/80 {
+
+	background: linear-gradient(160deg, rgba(34, 211, 238, 0.12) 0%, rgba(168, 85, 247, 0.15) 52%, rgba(232, 121, 249, 0.1) 100%) !important;
+
+	border: 1px solid var(--ai-border) !important;
+
+}
+
+
+
+.border-rose-300\/40 {
+
+	border-color: rgba(168, 85, 247, 0.4) !important;
+
+}
+
+
+
+.text-rose-100 {
+
+	color: #e9d5ff !important;
+
+}
+
+
+
+#mobile-menu-overlay {
+
+	background-color: rgba(7, 11, 20, 0.75) !important;
+
+	backdrop-filter: blur(4px);
+
+}
+
+
+
+.shadow-\[0_12px_45px_rgba\(2\,6\,23\,0\.35\)\] {
+
+	box-shadow: 0 12px 40px rgba(34, 211, 238, 0.12), 0 0 60px rgba(168, 85, 247, 0.08) !important;
+
+}
+
+
+
+a:hover {
+
+	filter: brightness(1.05);
+
+}
+
+
+
+/* 首页 Hero 霓虹标题 */
+
+.aitt-hero-glow h1 {
+
+	background: linear-gradient(120deg, #f8fafc 0%, #22d3ee 40%, #e879f9 100%);
+
+	-webkit-background-clip: text;
+
+	background-clip: text;
+
+	color: transparent;
+
+}
+
+
+
+.aitt-cta-pulse {
+
+	animation: aitt-pulse 2.5s ease-in-out infinite;
+
+}
+
+
+
+@keyframes aitt-pulse {
+
+	0%, 100% { box-shadow: 0 4px 20px rgba(34, 211, 238, 0.4); }
+
+	50% { box-shadow: 0 6px 32px rgba(168, 85, 247, 0.55); }
+
+}
+
+
+
+/* 分页 */
+
+.aitt-pagination-pill a.page-numbers,
+
+.betdbr-pagination-pill a.page-numbers,
+
+.aitt-pagination-pill a.page-numbers {
+
+	display: inline-flex;
+
+	min-height: 2.5rem;
+
+	min-width: 2.5rem;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding-left: 0.75rem;
+
+	padding-right: 0.75rem;
+
+	border-radius: 0.5rem;
+
+	text-decoration: none;
+
+	color: inherit;
+
+	font-weight: 600;
+
+}
+
+
+
+/* 政策/关于页排版（中文长文） */
+
+body.page-guanyu-women main,
+
+body.page-bianji-zhengce main,
+
+body.page-pingce-fangfa main,
+
+body.page-shiyong-xuzhi main,
+
+body.page-yinsi-zhengce main,
+
+body.page-fuwu-tiaokuan main,
+
+body.page-sobre-nos main,
+
+body.page-politica-editorial main,
+
+body.page-metodologia main,
+
+body.page-jogo-responsavel main,
+
+body.page-politica-de-privacidade main,
+
+body.page-termos-de-uso main {
+
+	max-width: 980px !important;
+
+}
+
+
+
+body.page-guanyu-women main > section:first-child h1,
+
+body.page-bianji-zhengce main > section:first-child h1,
+
+body.page-pingce-fangfa main > section:first-child h1,
+
+body.page-shiyong-xuzhi main > section:first-child h1,
+
+body.page-yinsi-zhengce main > section:first-child h1,
+
+body.page-fuwu-tiaokuan main > section:first-child h1 {
+
+	font-size: clamp(1.85rem, 1.2rem + 2.1vw, 2.75rem) !important;
+
+	line-height: 1.25 !important;
+
+	letter-spacing: 0.02em;
+
+}
+
+
+
+body.page-guanyu-women main > section:nth-child(2) p,
+
+body.page-bianji-zhengce main > section:nth-child(2) p,
+
+body.page-pingce-fangfa main > section:nth-child(2) p,
+
+body.page-shiyong-xuzhi main > section:nth-child(2) p,
+
+body.page-yinsi-zhengce main > section:nth-child(2) p,
+
+body.page-fuwu-tiaokuan main > section:nth-child(2) p {
+
+	font-size: clamp(0.98rem, 0.93rem + 0.25vw, 1.1rem) !important;
+
+	line-height: 1.9 !important;
+
+	max-width: 74ch;
+
+}
+
+
+
+@media (max-width: 640px) {
+
+	body.page-guanyu-women main,
+
+	body.page-bianji-zhengce main,
+
+	body.page-pingce-fangfa main {
+
+		padding-top: 1.5rem !important;
+
+		padding-bottom: 2rem !important;
+
+	}
+
+}
+
+
+
+/* 合规说明块 */
+
+.aitt-legal-notice {
+
+	margin-top: clamp(1.25rem, 2.3vw, 2.25rem);
+
+}
+
+
+
+.aitt-legal-notice__card {
+
+	background: linear-gradient(160deg, rgba(15, 23, 42, 0.9) 0%, rgba(34, 211, 238, 0.06) 52%, rgba(168, 85, 247, 0.08) 100%) !important;
+
+	border-color: var(--ai-border) !important;
+
+	box-shadow: var(--ai-glow);
+
+}
+
+
+
+.aitt-legal-notice__badge {
+
+	background: rgba(34, 211, 238, 0.15) !important;
+
+	border-color: rgba(34, 211, 238, 0.35) !important;
+
+	color: var(--ai-cyan) !important;
+
+}
+
+
+
+.aitt-legal-notice__title {
+
+	font-size: clamp(1.35rem, 1.1rem + 1.2vw, 2.05rem) !important;
+
+	line-height: 1.3 !important;
+
+}
+
+
+
+.aitt-legal-notice__intro {
+
+	max-width: 72ch;
+
+	line-height: 1.85;
+
+	color: var(--ai-text-soft) !important;
+
+}
+
+
+
+.aitt-legal-notice__item {
+
+	background-color: rgba(15, 23, 42, 0.6) !important;
+
+	border-color: var(--ai-border) !important;
+
+}
+
+
+
+.aitt-legal-notice__foot {
+
+	border-top: 1px solid var(--ai-border);
+
+	color: var(--ai-text-muted) !important;
+
+}
+
+
+
+@media (max-width: 768px) {
+
+	.aitt-legal-notice__card {
+
+		border-radius: 1rem !important;
+
+		padding: 1rem !important;
+
+	}
+
+}
+
+/* 面包屑（百度 / Google 结构化友好） */
+.aitt-breadcrumbs ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
