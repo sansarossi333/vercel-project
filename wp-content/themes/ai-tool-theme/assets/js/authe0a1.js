@@ -505,4 +505,3 @@ const AITT_AUTH_RUNTIME = {
 	window.aittAuthApi = API;
 })();
 
-
